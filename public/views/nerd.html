@@ -1,5 +1,24 @@
 <div class="jumbotron text-center">
 	<h1>Nerds and Proud</h1>
+	<p>Number of nerds {{ nerds.length }} </p>
+
+	<ul>
+		<li ng-repeat="nerd in nerds">
+			{{ nerd.name }} <button type="button" ng-click="deleteNerd(nerd._id)">x</button>
+		</li>
+	</ul>
+
+	<div id="nerd-form" class="row">
+		<div class="col-xs-12">
+			<form>
+				<div class="form-group">
+					<input type="text" class="form-control text-center" ng-model="formData.name">
+				</div>
+
+				<button type="submit" class="btn btn-primary btn-lg" ng-click="createNerd()">Add</button>
+			</form>
+		</div>
+	</div>
 
 	<p>{{ tagline }}</p>
 </div>
